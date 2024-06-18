@@ -1,0 +1,63 @@
+//Define variables
+$dark-bg: #232323;
+$dark-bgV2: rgb(41, 41, 41);
+$Light-text: #dddddd;
+$accent-color: #ff6b00;
+$border-accent-color: #b84d00;
+$border-main-color: rgb(80, 80, 80);
+$poppins-font: 'Poppins', sans-serif;
+
+//import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Message input container styles
+.message-input-container {
+    font-family: $poppins-font;
+    display: flex;
+}
+
+// Message input styles
+.message-input {
+    width: 60%;
+    font-family: $poppins-font;
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid $border-accent-color;
+    border-radius: 4px;
+    background-color: $accent-color;
+    color: white;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    &::placeholder {
+        color: white;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: lighten($color: $border-accent-color, $amount: 10%);
+        background-color: darken($color: $accent-color, $amount: 10%);
+    }
+}
+
+// Send message button styles
+.send-message {
+    font-family: $poppins-font;
+    background-color: $accent-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        background-color: lighten($accent-color, 10%);
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    &:disabled {
+        background-color: rgba(255, 107, 0, 0.5);
+        cursor: not-allowed;
+    }
+}

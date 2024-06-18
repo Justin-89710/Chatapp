@@ -1,0 +1,290 @@
+//Define variables
+$dark-bg: #232323;
+$dark-bgV2: rgb(41, 41, 41);
+$Light-text: #dddddd;
+$accent-color: #ff6b00;
+$border-accent-color: #b84d00;
+$border-main-color: rgb(80, 80, 80);
+$poppins-font: 'Poppins', sans-serif;
+
+//import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Background styles
+.container {
+    background-color: $dark-bg;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='246' height='246' viewBox='0 0 200 200'%3E%3Cg %3E%3Cpolygon fill='%238e2900' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%23a33b00' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%238e2900' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%23a33b00' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%23B84D00' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%23c13700' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%23e05100' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23FF6B00' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%23e05100' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%23c13700' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23FF6B00' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%23c13700' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23FF6B00' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%23e05100' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23FF6B00' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E");
+    font-family: $poppins-font;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    padding: 20px;
+    color: $Light-text;
+    overflow: auto;
+    flex-wrap: wrap;
+    text-decoration: none;
+
+    // Responsive design
+    @media (max-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+    }
+}
+
+// Rooms styles
+.leftPanel {
+  width: 40%;
+  border-right: 1px solid $border-main-color;
+  padding-right: 20px;
+  height: 100%;
+  overflow-y: auto;
+
+  // Responsive design
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    padding-right: 0;
+  }
+
+  div {
+    text-decoration: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  // Group container styles
+  .groupContainer {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: rgba($color: #979797, $alpha: 0.2);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    // Group list styles
+    .groupList {
+      list-style-type: none;
+      padding: 0;
+      margin: 2;
+      text-decoration: none;
+
+      // Group item styles
+      .groupItem {
+        text-decoration: none;
+        position: relative;
+        background-color: $accent-color;
+        border-radius: 0.5rem;
+        border: 2px solid $border-accent-color;
+        padding: 15px;
+        display: grid;
+        place-content: center;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        transition: background-color 0.3s ease, $border-main-color 0.3s ease;
+        color: white;
+      
+        a {
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+      
+        &:hover {
+          background-color: lighten($accent-color, 10%);
+          border-color: darken($accent-color, 20%);
+          color: darken(white, 10%);
+        }
+      
+        // New message indicator styles
+        .newMessageIndicatorContainer {
+          text-decoration: none;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: darken($accent-color, 10%);
+          border: darken($border-accent-color, 10%) 2px solid;
+          //shadow
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          color: white;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}      
+
+
+// Make Groupe styles
+.mainContent {
+  flex: 1;
+  padding-left: 20px;
+  background-color: rgba($color: #979797, $alpha: 0.2);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+
+  // Responsive design
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 10rem;
+  }
+
+  // Header styles
+  .subtext {
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  // Title styles
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  // Input group styles
+  .inputGroup {
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  // Input label styles
+  .inputLabel {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  // Input text styles
+  .inputText {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 16px;
+    border: 2px solid $border-accent-color;
+    border-radius: 0.5rem;
+    background-color: $accent-color;
+    color: white;
+    transition: border-color 0.5s ease, background-color 0.5s ease;
+    font-family: $poppins-font;
+
+    &:focus {
+      outline: none;
+      border: lighten($color: $border-accent-color, $amount: 10%) 2px solid;
+      background-color: darken($color: $accent-color, $amount: 10%);
+    }
+  }
+
+  // maber List styles
+  .membersList {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  // Member item styles
+  .memberItem {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $accent-color;
+    border-radius: 0.5rem;
+    padding: 10px;
+    color: white;
+    border: $border-accent-color 2px solid;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background-color: lighten($accent-color, 10%);
+      border-color: darken($accent-color, 20%);
+    }
+  }
+
+  // Checkbox label styles
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: $Light-text;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    color: white;
+
+    // Checkbox input styles
+    input[type="checkbox"] {
+      margin-right: 10px;
+      cursor: pointer;
+      display: grid;
+      place-content: center;
+      //hide the default checkbox
+      appearance: none;
+    }
+
+    // Checkbox custom styles
+    input[type="checkbox"]::before {
+        content: "";
+        width: 1em;
+        height: 1em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+      }
+
+      // Checkbox custom styles
+      input[type="checkbox"]:checked::before {
+        transform: scale(1);
+        box-shadow: inset 1em 1em $border-accent-color;
+        border-radius: 0.5rem;
+      }
+
+    // Checkbox label styles
+    label {
+      cursor: pointer;
+    }
+
+    // Checkbox label hover styles
+    &:hover {
+      color: $accent-color;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  // Button styles
+  .button {
+    font-family: $poppins-font;
+    background-color: $accent-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    // Button hover styles
+    &:hover {
+      background-color: lighten($accent-color, 10%);
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
