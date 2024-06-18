@@ -5,12 +5,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/
 
 //firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA5qNK9NXiB36qxRU4rU5plSh5e-1Ziw7Y",
-    authDomain: "chatappnew-98d0b.firebaseapp.com",
-    projectId: "chatappnew-98d0b",
-    storageBucket: "chatappnew-98d0b.appspot.com",
-    messagingSenderId: "964792968665",
-    appId: "1:964792968665:web:0f10697c2dd6a4fae6a5c8"
+
 };
 
 //initialize firebase app
